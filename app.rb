@@ -13,6 +13,15 @@ get '/dogs' do
   "Do I prefer dogs? Hmm, cats are cute too"
 end 
 
-get '/cat' do
+get '/random-cat' do
+  erb :index
+  @name = ["Amigo", "Misty", "Almond"].sample
+end 
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  @surname = params[:surname]
+  @color = params[:color]
   erb :index
 end 
